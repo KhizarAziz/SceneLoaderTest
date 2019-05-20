@@ -18,7 +18,7 @@ public class SmoothCanvas : MonoBehaviour
  
         if (playerCamera == null )
         {
-           playerCamera = GameObject.FindObjectOfType<Camera>().transform;
+           playerCamera = FindObjectOfType<Camera>().transform;
         }
          
 
