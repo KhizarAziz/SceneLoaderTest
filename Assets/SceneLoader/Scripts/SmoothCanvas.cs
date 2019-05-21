@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SmoothCanvas : MonoBehaviour
 {
 
-    [Tooltip ("Player camera which is responsible to interact with canvas, if you leave this field empty, it will find the first camera in the scene")]
+    [Tooltip ("Player camera which is responsible to interact with canvas. if you leave this field empty, it will find the first camera in the scene")]
     public Transform playerCamera;
     [Tooltip("The slight elastic movement of the canvas related to camera movement. Increase the value to make the canvas act fast")]
     [Range(1,20)]
