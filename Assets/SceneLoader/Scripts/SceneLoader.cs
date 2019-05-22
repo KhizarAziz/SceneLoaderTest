@@ -19,9 +19,9 @@ public class SceneLoader : MonoBehaviour
 
     [Header("Others")]
     [TextArea]
-    List<string> tips;
-    readonly string dummyTip = "This area is to display Random Tips, You can add them on the Tips.text file in Directory.";
-    public TextAsset tipsFile;
+    string[] tips;
+    readonly string dummyTip = "This text area is to display Random Tips, You can add/remove tips in SceneLoaderTest_Data/StreamingAssets/Tips.txt";
+   // public TextAsset tipsFile;
 
 
     public static SceneLoader instance;
@@ -47,11 +47,10 @@ public class SceneLoader : MonoBehaviour
     private void Start()
     {
 
-        //InitTips();
-
+        InitTips();
         instance = this;
         LoadingScreen.SetActive(false);
-        tipTextUI.text = tips[ Random.Range(0,tips.Count-1) ];
+        tipTextUI.text = tips[ Random.Range(0,tips.Length) ];
         
     }
     
@@ -106,19 +105,20 @@ public class SceneLoader : MonoBehaviour
      
     void InitTips()
     {
-     
-        //Read the text from directly from the test.txt file
-        StreamReader sr = new StreamReader("Assets/Resources/Tips.txt");
-        tips = new List<string>();
-       while (!sr.EndOfStream)
-       {
-            tips.Add(sr.ReadLine());
+
+        string filePath = Path.Combine(Application.streamingAssetsPath, "Tips.txt");
+        if (File.Exists(filePath))
+        {
+            tips = File.ReadAllLines(filePath);
+            if (tips.Length < 1)
+            {
+                tips[0] = dummyTip;
+            }
         }
-
-        if (tips.Count < 1)
-            tips.Add(dummyTip);
-
-        sr.Close();
+        else {
+            tips[0] = dummyTip; 
+        }
+        
     }
 
 
