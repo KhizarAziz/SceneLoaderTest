@@ -53,8 +53,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CurrentProject\Scripts\Pointer.cs" />
+     <Compile Include="Assets\CurrentProject\Scripts\VRInputModule.cs" />
+     <Compile Include="Assets\External Assets\Ruins\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
      <Compile Include="Assets\SceneLoader\Scripts\Rotate.cs" />
+     <Compile Include="Assets\SceneLoader\Scripts\SceneLoader.cs" />
      <Compile Include="Assets\SceneLoader\Scripts\SmoothCanvas.cs" />
+     <None Include="Assets\StreamingAssets\Tips.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/Great-PC/Documents/GitHub/SceneLoaderTest/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
@@ -262,9 +267,6 @@
  <Reference Include="UnityEngine.XRModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.0b1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
  </Reference>
- <Reference Include="Valve.Newtonsoft.Json">
- <HintPath>C:/Users/Great-PC/Documents/GitHub/SceneLoaderTest/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
- </Reference>
  <Reference Include="Unity.Analytics.Editor">
  <HintPath>C:/Users/Great-PC/Documents/GitHub/SceneLoaderTest/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
@@ -273,6 +275,9 @@
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
  <HintPath>C:/Users/Great-PC/Documents/GitHub/SceneLoaderTest/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+ </Reference>
+ <Reference Include="Valve.Newtonsoft.Json">
+ <HintPath>C:/Users/Great-PC/Documents/GitHub/SceneLoaderTest/Assets/External Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.0b1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -629,6 +634,10 @@
       <Project>{B41B0089-FCD5-5437-F695-F08EA997F4CC}</Project>
       <Name>SteamVR_Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="SteamVR_Actions.csproj">
+      <Project>{3CF9C266-944D-BE2D-74A2-4B7061BE123D}</Project>
+      <Name>SteamVR_Actions</Name>
+    </ProjectReference>
     <ProjectReference Include="SteamVR.csproj">
       <Project>{3541FF71-A250-A393-DFE3-E2F226F6F04A}</Project>
       <Name>SteamVR</Name>
@@ -636,10 +645,6 @@
     <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
       <Project>{758D2086-EFDE-DFBE-292A-699475829A0D}</Project>
       <Name>SteamVR_Windows_EditorHelper</Name>
-    </ProjectReference>
-    <ProjectReference Include="SteamVR_Actions.csproj">
-      <Project>{3CF9C266-944D-BE2D-74A2-4B7061BE123D}</Project>
-      <Name>SteamVR_Actions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
